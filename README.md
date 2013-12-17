@@ -99,7 +99,7 @@ The `.errors` property will be an array of Errors that occurred while spinning.
       return done();
     }
 
-    process.stderr.write('Oh my gawd, it's full of STACKS:\n');
+    process.stderr.write("Oh my gawd, it's full of STACKS:\n");
     spinner.errors.forEach(function(e) {
       process.stderr.write(e.stack+"\n\n");
     );
