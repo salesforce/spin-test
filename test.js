@@ -101,6 +101,13 @@ describe('spin-test tests', function() {
     assert.notCalled(check);
     assert.calledOnce(finish);
     assert.calledWith(finish, sinon.match.instanceOf(Error));
+
+    assert.isArray(spinner.errors);
+    assert.lengthOf(spinner.errors, 5);
+    for (var i = 0; i < spinner.errors.length; i++) {
+      assert.instanceOf(spinner.errors[i], Error);
+      assert.equal(spinner.errors[i].message, 'bad');
+    }
   });
 
   it('spins repeatedly on check failure', function() {
@@ -132,6 +139,13 @@ describe('spin-test tests', function() {
     assert.callCount(check, 5);
     assert.calledOnce(finish);
     assert.calledWith(finish, sinon.match.instanceOf(Error));
+
+    assert.isArray(spinner.errors);
+    assert.lengthOf(spinner.errors, 5);
+    for (var i = 0; i < spinner.errors.length; i++) {
+      assert.instanceOf(spinner.errors[i], Error);
+      assert.equal(spinner.errors[i].message, 'something is wrong');
+    }
   });
 
   it('can set custom intervals', function() {
