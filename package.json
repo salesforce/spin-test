@@ -1,6 +1,6 @@
 {
   "name": "spin-test",
-  "version": "0.0.0",
+  "version": "0.9.0",
   "description": "Spin on a test until it passes",
   "main": "index.js",
   "scripts": {
