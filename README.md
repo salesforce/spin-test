@@ -2,6 +2,8 @@
 
 Spin on a test until it passes.
 
+[![Build Status](https://travis-ci.org/goinstant/spin-test.png?branch=master)](https://travis-ci.org/goinstant/spin-test)
+
 Inspired by
 http://sauceio.com/index.php/2011/04/how-to-lose-races-and-win-at-selenium/
 
