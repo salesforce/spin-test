@@ -43,9 +43,9 @@ All three parameters to `spin()` are Functions.
 ```
 
 The `action` will be executed on the next tick by `setImmediate` and runs
-asynchronously. The results of the `action` (minus the first `err` param) are
-passed to the `check`. If the `action` calls-back with an `err`, it will be
-scheduled to run again after a short period (100ms by default).
+**asynchronously**. The callback results of the `action` (minus the first `err`
+param) are passed to the `check`. If the `action` calls-back with an `err`, it
+will be scheduled to run again after a short period (100ms by default).
 
 The `check` Function runs **synchronously**. If the `check` doesn't throw,
 `done` will get called.
@@ -77,6 +77,14 @@ Or, you can modify the times for each test:
   var spinner = spin(action, check, done);
   spinner.timeout = 1000;
   spinner.wait = 10;
+```
+
+## Impatience
+
+Want the `action` to run immediately, not after `setImmediate`? We got you covered.
+
+```js
+  spinner.start();
 ```
 
 ## Error Accumulator
