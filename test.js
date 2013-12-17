@@ -47,6 +47,31 @@ describe('spin-test tests', function() {
     assert.calledOnce(finish);
   });
 
+  it('calling start() twice does nothing', function() {
+    var action = sinon.stub().yields(null);
+    var check = sinon.stub();
+    var finish = sinon.stub();
+
+    var spinner = spin(action, check, finish);
+
+    assert.notCalled(action);
+    assert.notCalled(check);
+    assert.notCalled(finish);
+
+    spinner.start();
+
+    assert.calledOnce(action);
+    assert.calledOnce(check);
+    assert.calledOnce(finish);
+
+    spinner.start();
+
+    // no change:
+    assert.calledOnce(action);
+    assert.calledOnce(check);
+    assert.calledOnce(finish);
+  });
+
   it('spins repeatedly on action failure', function() {
     var action = sinon.stub().yields(new Error('bad'));
     var check = sinon.stub();
