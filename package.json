@@ -1,0 +1,21 @@
+{
+  "name": "spin-test",
+  "version": "0.0.0",
+  "description": "Spin on a test until it passes",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/goinstant/spin-test.git"
+  },
+  "author": "GoInstant Inc., a salesforce.com company",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/goinstant/spin-test/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.9.0"
+  }
+}
